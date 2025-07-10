@@ -10,7 +10,7 @@ struct Node{
     {
         return (links[c-'a']!=NULL);
     }
-    Node* putNode(char c, Node* node)
+    void putNode(char c, Node* node)
     {
         link[c-'a']=node;
     }
