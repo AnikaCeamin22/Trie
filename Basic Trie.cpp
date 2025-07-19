@@ -2,44 +2,35 @@
 using namespace std;
 
 struct Node{
-    Node* links[26];
+    Node* links[26];  // unordered_map<string, Node*>links;
     int endwith=0;
     int prefix=0;
 
-    bool containsKey(char c)
-    {
+    bool containsKey(char c){
         return (links[c-'a']!=NULL);
     }
-    void putNode(char c, Node* node)
-    {
-        link[c-'a']=node;
+    void putNode(char c, Node* node){
+        links[c-'a']=node;
     }
-    Node* getNode(char c)
-    {
-        return link[c-'a'];
+    Node* getNode(char c){
+        return links[c-'a'];
     }
-    void increasePrefix()
-    {
+    void increasePrefix(){
         prefix++;
     }
-    void increaseEndwith()
-    {
+    void increaseEndwith(){
         endwith++;
     }
-    int showPrefix()
-    {
+    int showPrefix(){
         return prefix;
     }
-    int showEndwith()
-    {
+    int showEndwith(){
         return endwith;
     }
-    void deletePrefix()
-    {
+    void deletePrefix(){
         prefix--;
     }
-    void deleteEndwith()
-    {
+    void deleteEndwith(){
         endwith--;
     }
 };
